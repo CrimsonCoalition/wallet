@@ -56,7 +56,12 @@ async def donate_command(message: types.Message):
 @dp.message_handler(commands=["admin"])                      
 async def adm_start_command(message: types.Message):
     await message.reply("{0.first_name}, ты не админ")
-                      
+
+# Market / Маркет
+@dp.message_handler(commands=["market"])
+async def adm_start_command(message: types.Message):
+  await message.reply("💠 Здесь вы можете купить или продать криптовалюту с помощью перевода на карту или электронный кошелёк.")
+    
 # Делаем так, чтобы бот работал постоянно
 if __name__ == '__main__':
     executor.start_polling(dp)
