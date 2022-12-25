@@ -36,7 +36,10 @@ async def start_command(message: types.Message):
 async def start_command(message: types.Message):
     await message.reply("{0.first_name}, это ваш счет:")
     
-
+# Settings / Настройки
+@dp.message_handler(commands=["settings"])
+async def start_command(message: types.Message):
+  await message.reply("{0.first_name}, Добро пожаловать в настройки:")
 
 # Делаем так чтобы бот работал постоянно
 if __name__ == '__main__':
