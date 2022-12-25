@@ -28,7 +28,7 @@ dp = Dispatcher(client)
 
 @dp.message_handler(commands=["start"])
 async def start_command(message: types.Message):
-    await message.reply("тест")
+    await message.reply("Привет, {0.first_name}!")
 
 
 
