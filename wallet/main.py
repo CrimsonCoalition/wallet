@@ -41,6 +41,12 @@ async def start_command(message: types.Message):
 @dp.message_handler(commands=["settings"])
 async def start_command(message: types.Message):
   await message.reply("{0.first_name}, Добро пожаловать в настройки:", reply_markup=inline_kb4")
+                      
+# Donate / Донат
+@dp.message_handler(commands=["donate"])
+async def start_command(message: types.Message):
+  await message.reply("{0.first_name}, мы постоянно занимаемся развитием этого проекта и стараемся делать регулярные обновления, если тебе нравится этот кошелек - отправь любую сумму пожертвования разработчикам на коффе:", reply_markup=inline_kb6")                      
+                      
 
 # Делаем так чтобы бот работал постоянно
 if __name__ == '__main__':
