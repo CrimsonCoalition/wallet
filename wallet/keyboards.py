@@ -11,6 +11,6 @@ inline_kb1 = InlineKeyboardMarkup().add(inline_btn_1)
 inline_btn_2 = InlineKeyboardButton('Вывести', callback_data='button2')
 inline_kb1 = InlineKeyboardMarkup().add(inline_btn_2)
 
-# 
+# Кнопка отправить средства
 inline_btn_3 = InlineKeyboardButton('Отправить', callback_data='button3')
 inline_kb1 = InlineKeyboardMarkup().add(inline_btn_3)
