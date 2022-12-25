@@ -24,5 +24,9 @@ inline_btn_5 = InlineKeyboardButton('🛎 Уведомления', callback_data
 inline_kb5 = InlineKeyboardMarkup().add(inline_btn_5)
 
 ## Кнопка Донат
-inline_btn_6 = InlineKeyboardButton('💸 Донат', callback_data='button7')
+inline_btn_6 = InlineKeyboardButton('💸 Донат', callback_data='button6')
 inline_kb6 = InlineKeyboardMarkup().add(inline_btn_6)
+
+## Кнопка Маркет
+inline_btn_7 = InlineKeyboardButton('Маркет', callback_data='button7')
+inline_kb7 = InlineKeyboardMarkup().add(inline_btn_7)
