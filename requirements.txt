@@ -1,0 +1,8 @@
+aiogram
+pytelegrambotapi
+flask
+jinja2
+redis
+gunicorn
+qrcode
+Pillow 
