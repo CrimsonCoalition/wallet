@@ -9,10 +9,7 @@ __  _  _______  |  | |  |   _____/  |_
 '''
 
 
-
-
-
-
+# Imports
 import requests
 import time
 import copy
