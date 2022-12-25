@@ -20,6 +20,7 @@ from config import token
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
+from config import config
 
 
 client = Bot(token=token)
