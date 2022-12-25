@@ -25,11 +25,16 @@ from aiogram.utils import executor
 client = Bot(token=token)
 dp = Dispatcher(client)
 
-
+# Приветствие
 @dp.message_handler(commands=["start"])
 async def start_command(message: types.Message):
     await message.reply("👋 Привет, {0.first_name}! я *Crimson Coalition Wallet* - Мультивалютный криптокошелек в Telegram. Покупайте, продавайте, храните и платите криптовалютой когда хотите. Подписывайтесь на наш канал @CrimsonCoalition. 💰.\nВаш мультивалютный кошелек создан и вы можете начать пользование системой 🛠. ")
 
+ # Кошелек
+@dp.message_handler(commands=["wallet"])
+async def start_command(message: types.Message):
+    await message.reply("{0.first_name}, это ваш счет:")
+    
 
 
 
