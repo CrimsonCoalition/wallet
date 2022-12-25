@@ -14,3 +14,11 @@ inline_kb1 = InlineKeyboardMarkup().add(inline_btn_2)
 # Кнопка отправить средства
 inline_btn_3 = InlineKeyboardButton('Отправить', callback_data='button3')
 inline_kb1 = InlineKeyboardMarkup().add(inline_btn_3)
+
+## Кнопка Рефералы в разделе "Рефералы"
+inline_btn_4 = InlineKeyboardButton('Рефералы', callback_data='button4')
+inline_kb1 = InlineKeyboardMarkup().add(inline_btn_4)
+
+## Кнопка Уведомления в разделе "Настройки"
+inline_btn_5 = InlineKeyboardButton('Уведомления', callback_data='button3')
+inline_kb1 = InlineKeyboardMarkup().add(inline_btn_5)
