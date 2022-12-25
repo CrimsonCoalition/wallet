@@ -49,7 +49,9 @@ async def start_command(message: types.Message):
  
 # Admin / Админка
 @dp.message_handler(commands=["admin"])                      
-
+async def start_command(message: types.Message):
+   await message.reply("{0.first_name}, ты не админ")                    
+                      
 # Делаем так чтобы бот работал постоянно
 if __name__ == '__main__':
     executor.start_polling(dp)
