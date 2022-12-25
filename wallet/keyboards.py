@@ -17,8 +17,12 @@ inline_kb1 = InlineKeyboardMarkup().add(inline_btn_3)
 
 ## Кнопка Рефералы в разделе "Рефералы"
 inline_btn_4 = InlineKeyboardButton('Рефералы', callback_data='button4')
-inline_kb1 = InlineKeyboardMarkup().add(inline_btn_4)
+inline_kb4 = InlineKeyboardMarkup().add(inline_btn_4)
 
 ## Кнопка Уведомления в разделе "Настройки"
-inline_btn_5 = InlineKeyboardButton('🛎 Уведомления', callback_data='button3')
-inline_kb1 = InlineKeyboardMarkup().add(inline_btn_5)
+inline_btn_5 = InlineKeyboardButton('🛎 Уведомления', callback_data='button5')
+inline_kb5 = InlineKeyboardMarkup().add(inline_btn_5)
+
+## Кнопка Донат
+inline_btn_7 = InlineKeyboardButton('💸 Донат', callback_data='button7')
+inline_kb7 = InlineKeyboardMarkup().add(inline_btn_7)
