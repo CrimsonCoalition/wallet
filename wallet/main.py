@@ -34,7 +34,7 @@ async def start_command(message: types.Message):
  # Wallet / Кошелек
 @dp.message_handler(commands=["wallet"])
 async def start_command(message: types.Message):
-    await message.reply("{0.first_name}, это ваш счет:")
+    await message.reply("{0.first_name}, это ваш счет:", reply_markup=inline_kb1)
     
 # Settings / Настройки
 @dp.message_handler(commands=["settings"])
