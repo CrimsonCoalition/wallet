@@ -20,7 +20,8 @@ from config import token
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
-from config import config
+from keyboards import inline_kb1 # импортируем из клавиатуры кнопки
+from config import config # импортируем конфиг 
 
 
 client = Bot(token=token)
