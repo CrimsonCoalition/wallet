@@ -13,7 +13,7 @@ from aiogram.utils import executor
 from aiogram.dispatcher import Dispatcher
 from aiogram.types.message import ContentType
 
-from config import token, PAYMENTS_PROVIDER_TOKEN, DONATE_PHOTO_URL
+from wallet import token, PAYMENTS_PROVIDER_TOKEN, DONATE_PHOTO_URL
 
 
 logging.basicConfig(format=u'%(filename)+13s [ LINE:%(lineno)-4s] %(levelname)-8s [%(asctime)s] %(message)s',
