@@ -50,3 +50,26 @@ async def process_buy_command(message: types.Message):
                            start_parameter='donate-example',
                            payload='some-invoice-payload-for-our-internal-use'
                            )
+@dp.pre_checkout_query_handler(func=lambda query: True)
+async def process_pre_checkout_query(pre_checkout_query: types.PreCheckoutQuery):
+    await bot.answer_pre_checkout_query(pre_checkout_query.id, ok=True)
+
+
+@dp.message_handler(content_types=ContentType.SUCCESSFUL_PAYMENT)
+async def process_successful_payment(message: types.Message):
+    print('successful_payment:')
+    pmnt = message.successful_payment.to_python()
+    for key, val in pmnt.items():
+        print(f'{key} = {val}')
+
+    await bot.send_message(
+        message.chat.id,
+        MESSAGES['successful_payment'].format(
+            total_amount=message.successful_payment.total_amount // 100,
+            currency=message.successful_payment.currency
+        )
+    )
+
+
+if __name__ == '__main__':
+    executor.start_polling(dp, loop=loop)
