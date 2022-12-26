@@ -1,30 +1,38 @@
 # Импортируем из библиотеки aiogram все нужное
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types import ReplyKeyboardRemove, \
+    ReplyKeyboardMarkup, KeyboardButton, \
+    InlineKeyboardMarkup, InlineKeyboardButton
 
-# Кнопка "Пополнить"
-inline_btn_1 = InlineKeyboardButton('Пополнить', callback_data='button1')
-inline_kb1 = InlineKeyboardMarkup().add(inline_btn_1)
 
-# Кнопка "Вывести"
-inline_btn_2 = InlineKeyboardButton('Вывести', callback_data='button2')
-inline_kb2 = InlineKeyboardMarkup().add(inline_btn_2)
 
-# Кнопка "Отправить"
-inline_btn_3 = InlineKeyboardButton('Отправить', callback_data='button3')
-inline_kb3 = InlineKeyboardMarkup().add(inline_btn_3)
+# Кнопка "Кошелёк"
+btn_wallet = InlineKeyboardButton
 
-## Кнопка Рефералы в разделе "Рефералы"
-inline_btn_4 = InlineKeyboardButton('Рефералы', callback_data='button4')
-inline_kb4 = InlineKeyboardMarkup().add(inline_btn_4)
+## Кнопка "Пополнить" и кнопка "Вывести"
+btn_top_up = InlineKeyboardButton('Пополнить', callback_data='btn_top_up')
+btn_withdraw = InlineKeyboardButton('Вывести', callback_data='btn_withdraw')
 
-## Кнопка Уведомления в разделе "Настройки"
-inline_btn_5 = InlineKeyboardButton('🛎 Уведомления', callback_data='button5')
-inline_kb5 = InlineKeyboardMarkup().add(inline_btn_5)
+## Кнопка Рефералы"
+btn_referrals = InlineKeyboardButton('Рефералы', callback_data='btn_referrals')
+
+## Кнопка "Уведомления"
+btn_notifications = InlineKeyboardButton('🛎 Уведомления', callback_data='btn_notifications')
 
 ## Кнопка "Донат"
-inline_btn_6 = InlineKeyboardButton('💸 Донат', callback_data='button6')
-inline_kb6 = InlineKeyboardMarkup().add(inline_btn_6)
+btn_donate = InlineKeyboardButton('💸 Донат', callback_data='btn_donate')
 
 ## Кнопка "Маркет"
-inline_btn_7 = InlineKeyboardButton('Маркет', callback_data='button7')
-inline_kb7 = InlineKeyboardMarkup().add(inline_btn_7)
+btn_market = InlineKeyboardButton('Маркет', callback_data='btn_market')
+
+## Кнопка "Настройки"
+btn_settings = InlineKeyboardButton('Настройки', callback_data='btn_settings')
+
+
+# Клавиатуры
+kb_menu = InlineKeyboardMarkup().add(btn_wallet, btn_market, btn_donate, btn_settings)
+kb_wallet = InlineKeyboardMarkup().row(btn_top_up, btn_withdraw)
+kb_referrals = InlineKeyboardMarkup
+kb_notifications = InlineKeyboardMarkup
+kb_market = InlineKeyboardMarkup
+kb_donate = InlineKeyboardMarkup
+kb_settings = InlineKeyboardMarkup().add(btn_notifications, btn_referrals)

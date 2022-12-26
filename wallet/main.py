@@ -15,38 +15,56 @@ import copy
 import random
 import os
 import json
-from aiogram import Bot, types
-from aiogram.dispatcher import Dispatcher
-from aiogram.utils import executor
-from keyboards import inline_kb1, inline_btn_1, \
-    inline_kb2, inline_btn_2, \
-    inline_kb3, inline_btn_3, \
-    inline_kb4, inline_btn_4, \
-    inline_kb5, inline_btn_5, \
-    inline_kb6, inline_btn_6  # импортируем из клавиатуры кнопки
-from config import config  # импортируем конфиг
+from aiogram import Bot, Dispatcher, executor, types
+from aiogram.contrib.fsm_storage.memory import MemoryStorage
+from aiogram.dispatcher import FSMContext
+from aiogram.dispatcher.filters.state import State, StatesGroup
+from aiogram.types import Message
+import logging
+import sqlite3
+from config.config import token, admin
+from keyboards import kb_menu, btn_wallet, btn_market, btn_donate, \
+    kb_wallet, btn_top_up, btn_withdraw, \
+    kb_referrals, btn_referrals, \
+    kb_notifications, btn_notifications, \
+    kb_donate, btn_donate, \
+    kb_market, btn_market , \
+    kb_settings, btn_settings# Импорты клавиатур и кнопок
 
-client = Bot(token=config.token)
+
+from config import config   # импортируем конфиг
+
+client = Bot(token=token)
 dp = Dispatcher(client)
+
+
+logging.basicConfig(level=logging.INFO)
+storage = MemoryStorage()
+bot = Bot(token=config.token)
+dp = Dispatcher(bot, storage=storage)
+
 
 
 # Приветствие / Welcome
 @dp.message_handler(commands=["start"])
 async def start_command(message: types.Message):
     await message.reply(
-        f"👋 Привет, {message.from_user.full_name}! я *Crimson Coalition Wallet* - Мультивалютный криптокошелек в Telegram. Покупайте, продавайте, храните и платите криптовалютой когда хотите. Подписывайтесь на наш канал @CrimsonCoalition. 💰.\nВаш мультивалютный кошелек создан и вы можете начать пользование системой 🛠. ")
+        f"👋 Привет, {message.from_user.full_name}! Я *Crimson Coalition Wallet* - Мультивалютный криптокошелек в Telegram."
+        f" Покупайте, продавайте, храните и платите криптовалютой когда хотите."
+        f" Подписывайтесь на наш канал @CrimsonCoalition 💰"
+        f"\nВаш мультивалютный кошелек создан и вы можете начать пользование системой 🛠", reply_markup=kb_menu)
 
 
 # Wallet / Кошелек
 @dp.message_handler(commands=["wallet"])
 async def wallet_command(message: types.Message):
-    await message.reply("{0.first_name}, это ваш счет:", reply_markup=inline_kb1)
+    await message.reply(f"{message.from_user.full_name}, это ваш счет:", reply_markup=kb_wallet)
 
 
 # Settings / Настройки
 @dp.message_handler(commands=["settings"])
 async def settings_command(message: types.Message):
-    await message.reply(f"{message.from_user.full_name}, Добро пожаловать в настройки:", reply_markup=inline_kb4)
+    await message.reply(f"{message.from_user.full_name}, Добро пожаловать в настройки:", reply_markup=kb_settings)
 
 
 # Donate / Донат
@@ -54,14 +72,15 @@ async def settings_command(message: types.Message):
 async def donate_command(message: types.Message):
     await message.reply(
         f"{message.from_user.full_name}, мы постоянно занимаемся развитием этого проекта и стараемся делать регулярные обновления, если тебе нравится этот кошелек - отправь любую сумму пожертвования разработчикам на кофе:",
-        reply_markup=inline_kb6)
+        reply_markup=kb_donate)
 
 
 # Admin / Админка
 @dp.message_handler(commands=["admin"])
 async def adm_start_command(message: types.Message):
     await message.reply(f"{message.from_user.full_name}, ты не админ")
-
+    if message.from_user.id == config.admin:
+        await message.answer('Добро пожаловать в Админ-Панель!')
 
 # Market / Маркет
 @dp.message_handler(commands=["market"])
