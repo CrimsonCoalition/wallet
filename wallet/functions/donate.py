@@ -25,3 +25,13 @@ dp = Dispatcher(bot, loop=loop)
 
 ## Устанавливаем цену.
 PRICE = types.LabeledPrice(label='Поддержать разработку', amount=50)
+
+@dp.message_handler(commands=['terms'])
+async def process_terms_command(message: types.Message):
+    await message.reply(MESSAGES['terms'], reply=False)
+    
+## Отправляем счет для оплаты.    
+@dp.message_handler(commands=['buy'])
+async def process_buy_command(message: types.Message):
+    if PAYMENTS_PROVIDER_TOKEN.split(':')[1] == 'TEST':
+        await bot.send_message(message.chat.id, MESSAGES['pre_buy_demo_alert'])    
