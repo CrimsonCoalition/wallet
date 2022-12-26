@@ -1,4 +1,21 @@
-# ***Wallet***
+![pngwing com (5)](https://user-images.githubusercontent.com/85753549/181843191-6a656b2c-3df9-4d24-bccf-4369a6458141.png)
+
+# ***Wallet by Crimson Coalition***
+
+<p>
+  <img alt="Версия" src="https://img.shields.io/badge/version-0.6-blue.svg?cacheSeconds=2592000" />
+  <a href="https://github.com/kefranabg/readme-md-generator#readme" target="_blank">
+    <img alt="Документация" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+  </a>
+  <a href="https://github.com/kefranabg/readme-md-generator/graphs/commit-activity" target="_blank">
+    <img alt="В разработке" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
+  </a>
+  <a href="https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE" target="_blank">
+    <img alt="Лицензия: GPL3" src="https://img.shields.io/github/license/CrimsonCoalition/wallet" />
+  </a>
+</p>
+
+
 ***Crimson Wallet или же просто Wallet - криптокошелек от [@CrimsonCoalition](https://t.me/CrimnsonCoalition)***
 
 ***Wallet*** - это telegram-бот для хранения Ethereum, Bitcoin, Toncoin, USDT и других криптовалют. Этот кошелек основан на [этом](https://github.com/googleQ7/fastcoinbot) проекте
