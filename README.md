@@ -89,3 +89,7 @@
 
 ## ***Bitcoin***
 ***Для работы с Bitcoin используется библиотека `pybitcointools`.***
+
+
+## ***Ethereum***
+*** ****
