@@ -98,3 +98,6 @@
 
 ## ***Toncoin***
 ***Для работы с Toncoin используется библиотека ton_client для python.***
+
+## ***BNB (Binance Coin)***
+***Для работы с BNB наш кошелек использует библиотеку [bnb-chain/python-sdk](https://github.com/bnb-chain/python-sdk)***
