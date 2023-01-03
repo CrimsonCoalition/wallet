@@ -7,3 +7,4 @@ redis
 gunicorn
 qrcode
 Pillow 
+python-binance-chain 
