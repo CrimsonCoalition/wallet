@@ -2,7 +2,7 @@ blank_issues_enabled: false
 contact_links:
   - name: Наш Telegram
     url: https://t.me/CrimsonCoalition
-    about: Please ask and answer questions here.
+    about: Тут вы можете задавать вопросы, следить за новостями проекта.
   - name: GitHub Security Bug Bounty
     url: https://bounty.github.com/
     about: Пожалуйста, сообщите о уязвимостях здесь.
