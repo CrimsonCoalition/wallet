@@ -15,6 +15,7 @@
   </a>
 </p>
 
+> Проект временно заморожен!
 
 ***Crimson Wallet или же просто Wallet - криптокошелек от [@CrimsonCoalition](https://t.me/CrimnsonCoalition)***
 
