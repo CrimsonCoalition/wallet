@@ -21,6 +21,8 @@
 
 ***Wallet*** - это telegram-бот для хранения Ethereum, Bitcoin, Toncoin, USDT и других криптовалют. Этот кошелек основан на [этом](https://github.com/googleQ7/fastcoinbot) проекте
 
+***Следить за новостями проекта можно также на нашем сайте: [crimson-coalition.ru](crimson-coalition.ru)***
+
 ## ***Содержание***
 ***[Описание]()***
 
